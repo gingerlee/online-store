@@ -11,7 +11,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { AboutComponent } from './about/about.component';
 import { MarketplaceComponent } from './marketplace/marketplace.component';
 import { AlbumDetailComponent } from './album-detail/album-detail.component';
-
+import { routing } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,8 @@ import { AlbumDetailComponent } from './album-detail/album-detail.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AlertModule.forRoot()
+    AlertModule.forRoot(),
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]

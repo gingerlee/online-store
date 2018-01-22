@@ -1,10 +1,30 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
 <div class="container">
-  <h1 class="btn btn-primary">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Album Shop</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="marketplace">Marketplace</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="albums">Album Details</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <h1>
     Welcome to {{ title }}!
   </h1>
+  <router-outlet></router-outlet>
 </div>
-<section>
-  <app-welcome></app-welcome>
-</section>
