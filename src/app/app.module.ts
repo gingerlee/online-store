@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AlertModule } from 'ngx-bootstrap';
+import { masterFirebaseConfig } from './api-keys';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 
 import { AppComponent } from './app.component';
@@ -12,6 +15,17 @@ import { AboutComponent } from './about/about.component';
 import { MarketplaceComponent } from './marketplace/marketplace.component';
 import { AlbumDetailComponent } from './album-detail/album-detail.component';
 import { routing } from './app.routing';
+import { AdminComponent } from './admin/admin.component';
+
+
+export const firebaseConfig = {
+  apiKey: masterFirebaseConfig.apiKey,
+  authDomain: masterFirebaseConfig.authDomain,
+  databaseURL: masterFirebaseConfig.databaseURL,
+  projectId: masterFirebaseConfig.projectId,
+  storageBucket: masterFirebaseConfig.storageBucket,
+  messagingSenderId: masterFirebaseConfig.messagingSenderId
+};
 
 @NgModule({
   declarations: [
@@ -19,14 +33,17 @@ import { routing } from './app.routing';
     WelcomeComponent,
     AboutComponent,
     MarketplaceComponent,
-    AlbumDetailComponent
+    AlbumDetailComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     AlertModule.forRoot(),
-    routing
+    routing,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
